@@ -11,22 +11,6 @@ class CursoExtensao extends Model {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      data_ini: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      data_fim: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      hora_ini: {
-        type: DataTypes.TIME,
-        allowNull: false,
-      },
-      hora_fim: {
-        type: DataTypes.TIME,
-        allowNull: false
-      },
       status: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
