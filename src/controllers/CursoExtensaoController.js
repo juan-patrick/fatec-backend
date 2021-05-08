@@ -30,7 +30,9 @@ module.exports = {
   async update(req, res) {
     const { cursoExtensaoId } = req.params;
 
-    const cursoExtensao = await CursoExtensao.update({ id: cursoExtensaoId }, req.body);
+    const cursoExtensao = await CursoExtensao.findByPk(cursoExtensaoId);
+
+    cursoExtensao.update(req.body);
 
     return res.json(cursoExtensao);
   }
