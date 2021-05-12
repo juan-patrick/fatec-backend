@@ -3,7 +3,7 @@ const Yup = require('yup');
 module.exports = {
   async CursoExtensaoValidator(req, res, next) {
     try {
-      const schema = Yup.object.shape({
+      const schema = Yup.object().shape({
         nome_extensao: Yup.string().max(45).required(),
         tipo_extensao: Yup.string().max(45).required(),
         status: Yup.bool(),
