@@ -70,9 +70,9 @@ Integrantes:
 - [x] Tipo de Contrato
 - [x] Regime
 - [x] Endereço
-- [ ] Inscrição *// Modelo não existe*
-- [ ] Certificado *// Modelo não existe*
-- [ ] Staff *// Modelo não existe*
+- [ ] Inscrição // Entidade fraca, será criado posteriormente
+- [x] Certificado 
+- [x] Staff
 - [x] Alunos
 - [x] Projetos
 - [x] Curso de Extensao
