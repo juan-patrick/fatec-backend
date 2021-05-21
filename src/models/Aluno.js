@@ -11,6 +11,10 @@ class Aluno extends Model {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      idade_aluno: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
       data_nasc: {
         type: DataTypes.DATE,
         allowNull: false,
