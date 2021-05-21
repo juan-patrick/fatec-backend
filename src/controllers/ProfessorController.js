@@ -1,39 +1,39 @@
 const Professor = require('../models/Professor');
 
 module.exports = {
-    async index(request,response){
-        const professors = await Professor.findAll();
+  async index(request, response) {
+    const professors = await Professor.findAll();
 
-        return response.json(professors);
-    },
-    async show (request,response){
-        const {professorId} = request.params;
+    return response.json(professors);
+  },
+  async show(request, response) {
+    const { professorId } = request.params;
 
-        const professor = await Professor.findByPk(professorId);
+    const professor = await Professor.findByPk(professorId);
 
-        return response.json(professor)
-    },
-    async store (request,response){
-        const professor = await Professor.create(request.body);
+    return response.json(professor)
+  },
+  async store(request, response) {
+    const professor = await Professor.create(request.body);
 
-        return response.json(professor);
-    },
-    async delete (request,response){
-        const {professorId} = request.params;
+    return response.json(professor);
+  },
+  async delete(request, response) {
+    const { professorId } = request.params;
 
-        const professor = await Professor.findByPk(professorId);
+    const professor = await Professor.findByPk(professorId);
 
-        await professor.destroy();
-        
-        return response.json(professor);
-    },
-    async update (request,response){
-        const {professorId} = request.params;
+    await professor.destroy();
 
-        const professor = await Professor.findByPk(professorId);
+    return response.json(professor);
+  },
+  async update(request, response) {
+    const { professorId } = request.params;
 
-        professor.update(request.body);
+    const professor = await Professor.findByPk(professorId);
 
-        return response.json(professor);
-    }
+    professor.update(request.body);
+
+    return response.json(professor);
+  }
 };
