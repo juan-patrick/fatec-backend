@@ -89,8 +89,8 @@ Integrantes:
 - [ ] Semana
 
 **Grupo 5**
-- [ ] Professores
-- [ ] Registro de Inatividade
-- [ ] Vinculo
+- [x] Professores
+- [x] Registro de Inatividade
+- [x] Vinculo
 
 ---
