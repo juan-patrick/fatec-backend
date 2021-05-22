@@ -5,6 +5,7 @@ const Aluno = require('../models/Aluno');
 const AreaPesquisa = require('../models/AreaPesquisa');
 const Certificado = require('../models/Certificado');
 const Comissao = require('../models/Comissao');
+const Curso = require('../models/Curso');
 const CursoExtensao = require('../models/CursoExtensao');
 const EmpregoPublico = require('../models/EmpregoPublico');
 const Endereco = require('../models/Endereco');
@@ -22,6 +23,7 @@ const Vinculo = require('../models/Vinculo');
 const connection = new Sequelize(dbConfig);
 
 CursoExtensao.init(connection);
+Curso.init(connection);
 Aluno.init(connection);
 AreaPesquisa.init(connection);
 Comissao.init(connection);
