@@ -19,6 +19,7 @@ const TipoContrato = require('../models/TipoContrato');
 const Titulacao = require('../models/Titulacao');
 const Turma = require('../models/Turma');
 const Vinculo = require('../models/Vinculo');
+const Projeto = require('../models/Projeto');
 
 const connection = new Sequelize(dbConfig);
 
@@ -40,6 +41,9 @@ Staff.init(connection);
 Certificado.init(connection);
 Inatividade.init(connection)
 Professor.init(connection);
+Projeto.init(connection);
+//AreaPesquisa.associate(connection.models);
+//CursoExtensao.associate(connection.models);
 
 connection.sync({ alter: true });
 
