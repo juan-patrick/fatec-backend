@@ -4,8 +4,8 @@ module.exports = {
   async CursoExtensaoValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        nome_extensao: Yup.string().max(45).required(),
-        tipo_extensao: Yup.string().max(45).required(),
+        nomeExtensao: Yup.string().max(45).required(),
+        tipoExtensao: Yup.string().max(45).required(),
         status: Yup.bool(),
       });
 
@@ -21,14 +21,14 @@ module.exports = {
   async DisciplinaValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        nome_disciplina: Yup.string().required(),
-        descricao_disciplina: Yup.string().required(),
-        carga_horaria: Yup.string().required(),
-        objetivo_disciplina: Yup.string().required(),
-        ementa_disciplina: Yup.string().required(),
-        refenciaBasica_disciplina: Yup.string().required(),
-        refenciaComplementar_disciplina: Yup.string().required(),
-        codSiga_disciplina: Yup.string().required(),
+        nomeDisciplina: Yup.string().required(),
+        descricaoDisciplina: Yup.string().required(),
+        cargaHoraria: Yup.string().required(),
+        objetivoDisciplina: Yup.string().required(),
+        ementaDisciplina: Yup.string().required(),
+        refenciaBasicaDisciplina: Yup.string().required(),
+        refenciaComplementarDisciplina: Yup.string().required(),
+        codSigaDisciplina: Yup.string().required(),
       });
 
       await schema.validate(req.body, { abortEarly: false });
@@ -43,7 +43,7 @@ module.exports = {
   async EmpregoPublicoValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        cargo_publico: Yup.string(50).required(),
+        cargoPublico: Yup.string(50).required(),
         situacao: Yup.bool(),
       });
 
@@ -59,7 +59,7 @@ module.exports = {
   async TitulacaoValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        nome_titulacao: Yup.string(45).required(),
+        nomeTitulacao: Yup.string(45).required(),
       });
 
       await schema.validate(req.body, { abortEarly: false });
@@ -74,7 +74,7 @@ module.exports = {
   async TipoContratoValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        tipo_contrato: Yup.string(45).required(),
+        tipoContrato: Yup.string(45).required(),
       });
 
       await schema.validate(req.body, { abortEarly: false });
@@ -89,7 +89,7 @@ module.exports = {
   async RegimeValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        tipo_regime: Yup.string(45).required(),
+        tipoRegime: Yup.string(45).required(),
       });
 
       await schema.validate(req.body, { abortEarly: false });
@@ -99,6 +99,54 @@ module.exports = {
       return res
         .status(400)
         .json({ message: 'Invalid data types to Tipo de Regime'});
+    }
+  },
+  async RegistroSituacaoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        dataInicial: Yup.date().required(),
+        dataFim: Yup.date().required(),
+        motivo: Yup.string().required()
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Registro Situacao' });
+    }
+  },
+  async ComissaoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nomeComissoes: Yup.string(45).required(),
+        descricao: Yup.string(45).required(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Comissao' });
+    }
+  },
+  async AreaPesquisaValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nomePesquisa: Yup.string(45).required(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Area de Pesquisa'});  
     }
   },
 };

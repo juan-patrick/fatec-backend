@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class AreaPesquisa extends Model {
   static init(sequelize) {
     super.init({
-      nome_pesquisa: {
+      nomePesquisa: {
         type: DataTypes.STRING(45),
         allowNull: false,
       }

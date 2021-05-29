@@ -3,28 +3,28 @@ const { Model, DataTypes } = require('sequelize');
 class Projeto extends Model {
   static init(sequelize) {
     super.init({
-      nome_projetos: {
+      nomeProjetos: {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
-      descricao_projetos: {
+      descricaoProjetos: {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
-      data_ini: {
+      dataInicial: {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      data_fim: {
+      dataFim: {
         type: DataTypes.DATE,
         allowNull: false,
         defaultValue: true,
       },
-      carga_horaria: {
+      cargaHoraria: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      situacao_projetos: {
+      situacaoProjetos: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull: false,

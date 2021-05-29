@@ -3,15 +3,15 @@ const { Model, DataTypes } = require('sequelize');
 class Certificado extends Model {
   static init(sequelize) {
     super.init({
-      nome_aluno: {
+      nomeAlunoCert: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      nome_palestrante: {
+      nomePalestrante: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      data_palestra: {
+      dataPalestra: {
         type: DataTypes.DATE,
         allowNull: false,
       }

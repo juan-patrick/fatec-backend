@@ -35,14 +35,14 @@ POST http://localhost:3333/disciplina HTTP/1.1
 Content-Type: application/json
 
 {
-"nome_disciplina": "ADS",
-"descricao_disciplina": "gdgggdfgdf",
-"carga_horaria": 80,
-"objetivo_disciplina": "gdggdgd",
-"ementa_disciplina": "gdffgfgfd",
-"refenciaBasica_disciplina": "dgdgfd",
-"refenciaComplementar_disciplina": "gdgfd",
-"codSiga_disciplina": "gdffgdg"
+"nomeDisciplina": "ADS",
+"descricaoDisciplina": "gdgggdfgdf",
+"cargaHoraria": 80,
+"objetivoDisciplina": "gdggdgd",
+"ementaDisciplina": "gdffgfgfd",
+"refenciaBasicaDisciplina": "dgdgfd",
+"refenciaComplementarDisciplina": "gdgfd",
+"codSigaDisciplina": "gdffgdg"
 }
 
 ###

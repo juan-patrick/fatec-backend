@@ -3,11 +3,11 @@ const { Model, DataTypes } = require('sequelize');
 class Inatividade extends Model {
   static init(sequelize) {
     super.init({
-      data_ini: {
+      dataInicio: {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      data_fim: {
+      dataFim: {
         type: DataTypes.DATE,
         allowNull: false,
       },

@@ -4,35 +4,35 @@ class Disciplina extends Model {
   static init(sequelize) {
     super.init(
       {
-        nome_disciplina: {
+        nomeDisciplina: {
           type: DataTypes.STRING(),
           allowNull: false,
         },
-        descricao_disciplina: {
+        descricaoDisciplina: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        carga_horaria: {
+        cargaHoraria: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        objetivo_disciplina: {
+        objetivoDisciplina: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        ementa_disciplina: {
+        ementaDisciplina: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        refenciaBasica_disciplina: {
+        refenciaBasicaDisciplina: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        refenciaComplementar_disciplina: {
+        refenciaComplementarDisciplina: {
           type: DataTypes.STRING,
           allowNull: false,
         },
-        codSiga_disciplina: {
+        codSigaDisciplina: {
           type: DataTypes.STRING,
           allowNull: false,
         }

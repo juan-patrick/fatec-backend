@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class Regime extends Model {
   static init(sequelize) {
     super.init({
-      tipo_regime: {
+      tipoRegime: {
         type: DataTypes.STRING(45),
         allowNull: false,
       }

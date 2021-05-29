@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class EmpregoPublico extends Model {
   static init(sequelize) {
     super.init({
-      cargo_publico: {
+      cargoPublico: {
         type: DataTypes.STRING(50),
         allowNull: false,
       },

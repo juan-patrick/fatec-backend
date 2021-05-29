@@ -3,40 +3,40 @@ const { Model, DataTypes } = require('sequelize');
 class Professor extends Model {
   static init(sequelize) {
     super.init({
-      nome_professor: {
+      nomeProfessor: {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
-      idade_professor: {
+      idadeProfessor: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      data_nasc: {
+      dataNasc: {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      CPF_professor: {
+      cpfProfessor: {
         type: DataTypes.STRING(20),
         allowNull: false,
    
       },
-      RG_professor: {
+      rgProfessor: {
         type: DataTypes.STRING(20),
         allowNull: false,
       },
-      celular_professor: {
+      celularProfessor: {
         type: DataTypes.STRING(20),
         allowNull: false,
       },
-      telefone_professor: {
+      telefoneProfessor: {
         type: DataTypes.STRING(20),
         allowNull: false,
       },
-      email_professor: {
+      emailProfessor: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      email_inst_professor: {
+      emailInstituProfessor: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },

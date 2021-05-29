@@ -3,47 +3,47 @@ const { Model, DataTypes } = require('sequelize');
 class Aluno extends Model {
   static init(sequelize) {
     super.init({
-      ra_aluno: {
+      raAluno: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      nome_aluno: {
+      nomeAluno: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      idade_aluno: {
+      idadeAluno: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      data_nasc: {
+      dataNascAluno: {
         type: DataTypes.DATE,
         allowNull: false,
       },
-      CPF_aluno: {
+      cpfAluno: {
         type: DataTypes.STRING(20),
         allowNull: false,
       },
-      RG_aluno: {
+      rgAluno: {
         type: DataTypes.STRING(20),
         allowNull: false,
       },
-      situacao_aluno: {
+      situacaoAluno: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
         allowNull: false,
       },
-      celular_aluno: {
+      celularAluno: {
         type: DataTypes.STRING(20),
         allowNull: false,
       },
-      telefone_aluno: {
+      telefoneAluno: {
         type: DataTypes.STRING(20),
       },
-      email_aluno: {
+      emailAluno: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      email_inst_aluno: {
+      emailInstituAluno: {
         type: DataTypes.STRING(45),
         allowNull: false,
       }
