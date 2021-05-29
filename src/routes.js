@@ -6,7 +6,6 @@ const EmpregoPublicoController = require('./controllers/EmpregoPublicoController
 const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
-const CursoController = require('./controllers/CursoController');
 const ProjetoController = require('./controllers/ProjetoController');
 const {
   CursoExtensaoValidator,
@@ -15,7 +14,6 @@ const {
   TitulacaoValidator,
   TipoContratoValidator,
   RegimeValidator,
-  CursoValidator,
   ProjetoValidator,
 } = require('./middlewares/Validator');
 

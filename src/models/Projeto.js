@@ -18,7 +18,6 @@ class Projeto extends Model {
       dataFim: {
         type: DataTypes.DATEONLY,
         allowNull: false,
-        defaultValue: true,
       },
       cargaHoraria: {
         type: DataTypes.INTEGER,

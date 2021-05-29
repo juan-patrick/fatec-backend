@@ -152,12 +152,12 @@ module.exports = {
   async ProjetoValidator(req, res, next) {
     try {
         const schema = Yup.object().shape({
-            descricao_projetos: Yup.string().max(255).required(),
-            data_ini: Yup.date().required(),
-            data_fim: Yup.date().required(),
-            carga_horaria: Yup.number().required(),
-            status: Yup.bool().required(),
-            nome_projetos: Yup.string().max(255).required(),
+            descricaoProjetos: Yup.string().max(255).required(),
+            dataInicial: Yup.date().required(),
+            dataFim: Yup.date().required(),
+            cargaHoraria: Yup.number().required(),
+            situacaoProjetos: Yup.bool().required(),
+            nomeProjetos: Yup.string().max(255).required(),
         });
         await schema.validate(req.body, { abortEarly: false });
         return next();
@@ -168,4 +168,3 @@ module.exports = {
   
   },
 }
-
