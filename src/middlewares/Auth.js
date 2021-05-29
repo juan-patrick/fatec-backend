@@ -1,6 +1,7 @@
-const { verify } = require('jsonwebtoken');
+// eslint-disable-next-line import/no-unresolved
+import { verify } from 'jsonwebtoken';
 
-module.exports = (req, res, next) => {
+export default (req, res, next) => {
   const { authentication } = req.headers;
 
   if (!authentication) {

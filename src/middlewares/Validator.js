@@ -4,8 +4,8 @@ module.exports = {
   async CursoExtensaoValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        nome_extensao: Yup.string().max(45).required(),
-        tipo_extensao: Yup.string().max(45).required(),
+        nomeExtensao: Yup.string().max(45).required(),
+        tipoExtensao: Yup.string().max(45).required(),
         status: Yup.bool(),
       });
 
@@ -18,20 +18,135 @@ module.exports = {
         .json({ message: 'Invalid data types to CursoExtensao' });
     }
   },
-  async CursoValidator(req, res, next) {
+  async DisciplinaValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
-        nome_curso: Yup.string().max(45).required(),
-        duracao_curso: Yup.number().required(),
-        descricao_curso: Yup.string().max(45).required(),
-        situacao_curso: Yup.bool().required(),
+        nomeDisciplina: Yup.string().required(),
+        descricaoDisciplina: Yup.string().required(),
+        cargaHoraria: Yup.string().required(),
+        objetivoDisciplina: Yup.string().required(),
+        ementaDisciplina: Yup.string().required(),
+        refenciaBasicaDisciplina: Yup.string().required(),
+        refenciaComplementarDisciplina: Yup.string().required(),
+        codSigaDisciplina: Yup.string().required(),
       });
 
       await schema.validate(req.body, { abortEarly: false });
 
       return next();
     } catch (error) {
-      return res.status(400).json({ message: 'Invalid data types to Curso' });
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Disciplina' });
+    }
+  },
+  async EmpregoPublicoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        cargoPublico: Yup.string(50).required(),
+        situacao: Yup.bool(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Emprego Publico'});
+    }
+  },
+  async TitulacaoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nomeTitulacao: Yup.string(45).required(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Titulacao'});
+    }
+  },
+  async TipoContratoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        tipoContrato: Yup.string(45).required(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Tipo de Contrato'});
+    }
+  },
+  async RegimeValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        tipoRegime: Yup.string(45).required(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Tipo de Regime'});
+    }
+  },
+  async RegistroSituacaoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        dataInicial: Yup.date().required(),
+        dataFim: Yup.date().required(),
+        motivo: Yup.string().required()
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Registro Situacao' });
+    }
+  },
+  async ComissaoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nomeComissoes: Yup.string(45).required(),
+        descricao: Yup.string(45).required(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Comissao' });
+    }
+  },
+  async AreaPesquisaValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nomePesquisa: Yup.string(45).required(),
+      });
+
+      await schema.validate(req.body, { abortEarly: false });
+
+      return next();
+    } catch (error) {
+      return res
+        .status(400)
+        .json({ message: 'Invalid data types to Area de Pesquisa'});  
     }
   },
 };

@@ -4,24 +4,24 @@ class Curso extends Model {
   static init(sequelize) {
     super.init(
       {
-        nome_curso: {
+        nomeCurso: {
           type: DataTypes.STRING(45),
           allowNull: false,
         },
-        duracao_curso: {
+        duracaoCurso: {
           type: DataTypes.INTEGER,
           allowNull: false,
         },
-        descricao_curso: {
+        descricaoCurso: {
           type: DataTypes.STRING(45),
           allowNull: false,
         },
-        situacao_curso: {
+        situacaoCurso: {
           type: DataTypes.BOOLEAN,
           allowNull: false,
           defaultValue: true,
         },
-        cod_mec: {
+        codMec: {
           type: DataTypes.STRING(45),
           allowNull: false,
         },

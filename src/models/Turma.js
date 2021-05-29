@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class Turma extends Model {
   static init(sequelize) {
     super.init({
-      nome_turma: {
+      nomeTurma: {
         type: DataTypes.STRING(20),
         allowNull: false,
       }
