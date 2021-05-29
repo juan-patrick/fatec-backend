@@ -3,11 +3,11 @@ const { Model, DataTypes } = require('sequelize');
 class CursoExtensao extends Model {
   static init(sequelize) {
     super.init({
-      tipo_extensao: {
+      tipoExtensao: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      nome_extensao: {
+      nomeExtensao: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },

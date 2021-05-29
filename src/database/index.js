@@ -7,6 +7,7 @@ const Certificado = require('../models/Certificado');
 const Comissao = require('../models/Comissao');
 const Curso = require('../models/Curso');
 const CursoExtensao = require('../models/CursoExtensao');
+const Disciplina = require('../models/Disciplina');
 const EmpregoPublico = require('../models/EmpregoPublico');
 const Endereco = require('../models/Endereco');
 const Horario = require('../models/Horario');
@@ -39,11 +40,10 @@ Turma.init(connection);
 Vinculo.init(connection);
 Staff.init(connection);
 Certificado.init(connection);
-Inatividade.init(connection)
+Inatividade.init(connection);
 Professor.init(connection);
-Projeto.init(connection);
-//AreaPesquisa.associate(connection.models);
-//CursoExtensao.associate(connection.models);
+Disciplina.init(connection);
+Projeto.init(connection)
 
 connection.sync({ alter: true });
 

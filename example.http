@@ -3,8 +3,23 @@ GET http://localhost:3333/cursos HTTP/1.1
 Content-Type: application/json
 
 ###
-// Insert 1
-POST http://localhost:3333/cursos HTTP/1.1
+GET http://localhost:3333/disciplina HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3333/empregoPublico HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3333/titulacao HTTP/1.1
+Content-Type: application/json
+###
+GET http://localhost:3333/regime HTTP/1.1
+Content-Type: application/json
+
+###
+// Insert 1 
+POST http://localhost:3333/cursoextensao HTTP/1.1
 Content-Type: application/json
 
 {
@@ -14,7 +29,49 @@ Content-Type: application/json
   "situacao_curso": true,
   "cod_mec": "324545"
 }
+###
 
+POST http://localhost:3333/disciplina HTTP/1.1
+Content-Type: application/json
+
+{
+"nomeDisciplina": "ADS",
+"descricaoDisciplina": "gdgggdfgdf",
+"cargaHoraria": 80,
+"objetivoDisciplina": "gdggdgd",
+"ementaDisciplina": "gdffgfgfd",
+"refenciaBasicaDisciplina": "dgdgfd",
+"refenciaComplementarDisciplina": "gdgfd",
+"codSigaDisciplina": "gdffgdg"
+}
+
+###
+
+POST http://localhost:3333/empregoPublico HTTP/1.1
+Content-Type: application/json
+
+{
+  "cargo_publico": "Deputado",
+  "situacao": true
+}
+
+###
+
+POST http://localhost:3333/regime HTTP/1.1
+Content-Type: application/json
+
+{
+  "tipo_regime": "Temporario"
+}
+
+###
+
+POST http://localhost:3333/tipocontrato HTTP/1.1
+Content-Type: application/json
+
+{
+  "tipo_contrato": "temporario"
+}
 
 ###
 

@@ -3,28 +3,28 @@ const { Model, DataTypes } = require('sequelize');
 class Endereco extends Model {
   static init(sequelize) {
     super.init({
-      CEP_endereco: {
+      cepEndereco: {
         type: DataTypes.STRING(20),
         allowNull: false,
       },
-      rua_endereco: {
+      ruaEndereco: {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
-      bairro_endereco: {
+      bairroEndereco: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      cidade_endereco: {
+      cidadeEndereco: {
         type: DataTypes.STRING(45),
         allowNull: false,
         defaultValue: true,
       },
-      numero_endereco: {
+      numeroEndereco: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      complemento_endereco: {
+      complementoEndereco: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },

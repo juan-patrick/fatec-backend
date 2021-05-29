@@ -1,18 +1,18 @@
 const { Model, DataTypes } = require('sequelize');
 
-class RegistroSubstituicao extends Model {
+class Usuario extends Model {
   static init(sequelize) {
     super.init({
-      dataInicial: {
-        type: DataTypes.DATE,
+      nomeUsuario: {
+        type: DataTypes.STRING(45),
         allowNull: false,
       },
-      dataFim: {
-        type: DataTypes.DATE,
+      senhaUsuario: {
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
-      motivo: {
-        type: DataTypes.STRING,
+      emailUsuario: {
+        type: DataTypes.STRING(45),
         allowNull: false,
       }
     }, { sequelize })
@@ -21,4 +21,4 @@ class RegistroSubstituicao extends Model {
   static associate(models) { return models }
 }
 
-module.exports = RegistroSubstituicao;
+module.exports = Usuario;

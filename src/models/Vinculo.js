@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class Vinculo extends Model {
   static init(sequelize) {
     super.init({
-      tipo_vinculo: {
+      tipoVinculo: {
         type: DataTypes.STRING(45),
         allowNull: false,
       },

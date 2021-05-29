@@ -1,4 +1,5 @@
-const { sign } = require('jsonwebtoken');
+// eslint-disable-next-line import/no-unresolved
+import { sign } from 'jsonwebtoken';
 
 const createToken = (params = {}) => {
   const expiresSet = new Date(Date.now());
@@ -10,4 +11,4 @@ const createToken = (params = {}) => {
   );
 };
 
-module.exports = { createToken };
+export default { createToken };
