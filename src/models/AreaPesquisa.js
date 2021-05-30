@@ -11,6 +11,8 @@ class AreaPesquisa extends Model {
   }
 
   static associate(models) { return models }
+  //static associate(models) { return this.hasMany(Projeto, { foreignKey: 'tb_area_pesquisa_idarea_pesquisa' }) }
+
 }
 
 module.exports = AreaPesquisa;

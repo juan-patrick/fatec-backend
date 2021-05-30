@@ -149,4 +149,22 @@ module.exports = {
         .json({ message: 'Invalid data types to Area de Pesquisa'});  
     }
   },
-};
+  async ProjetoValidator(req, res, next) {
+    try {
+        const schema = Yup.object().shape({
+            descricaoProjetos: Yup.string().max(255).required(),
+            dataInicial: Yup.date().required(),
+            dataFim: Yup.date().required(),
+            cargaHoraria: Yup.number().required(),
+            situacaoProjetos: Yup.bool().required(),
+            nomeProjetos: Yup.string().max(255).required(),
+        });
+        await schema.validate(req.body, { abortEarly: false });
+        return next();
+  
+    } catch (error) {
+        return res.status(400).json({ message: 'Invalid data types to Projetos' });
+    }
+  
+  },
+}

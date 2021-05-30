@@ -6,6 +6,7 @@ const EmpregoPublicoController = require('./controllers/EmpregoPublicoController
 const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
+const ProjetoController = require('./controllers/ProjetoController');
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
@@ -13,6 +14,7 @@ const {
   TitulacaoValidator,
   TipoContratoValidator,
   RegimeValidator,
+  ProjetoValidator,
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
@@ -96,5 +98,11 @@ routes.get('/regime/:regimeId', RegimeController.show);
 routes.post('/regime', RegimeValidator, RegimeController.store);
 routes.delete('/regime/:regimeId', RegimeController.delete);
 routes.put('/regime/:regimeId', RegimeValidator, RegimeController.update);
+
+routes.get('/projeto', ProjetoController.index);
+routes.get('/projeto/:projetoId', ProjetoController.show);
+routes.post('/projeto', ProjetoValidator, ProjetoController.store);
+routes.delete('/projeto/:projetoId', ProjetoController.delete);
+routes.put('/projeto/:projetoId', ProjetoValidator, ProjetoController.update);
 
 module.exports = routes;

@@ -12,13 +12,12 @@ class Projeto extends Model {
         allowNull: false,
       },
       dataInicial: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
       dataFim: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
-        defaultValue: true,
       },
       cargaHoraria: {
         type: DataTypes.INTEGER,
@@ -31,8 +30,6 @@ class Projeto extends Model {
       },
     }, { sequelize })
   }
-
-  static associate(models) { return models }
 }
 
 module.exports = Projeto;
