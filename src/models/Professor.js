@@ -11,7 +11,7 @@ class Professor extends Model {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      dataNasc: {
+      dataNascProfessor: {
         type: DataTypes.DATE,
         allowNull: false,
       },

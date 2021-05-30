@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class RegistroSubstituicao extends Model {
   static init(sequelize) {
     super.init({
-      dataInicial: {
+      dataInicio: {
         type: DataTypes.DATE,
         allowNull: false,
       },

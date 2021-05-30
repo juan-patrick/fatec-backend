@@ -1,5 +1,9 @@
 ###
-GET http://localhost:3333/cursos HTTP/1.1
+GET http://localhost:3333/horario HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3333/aluno HTTP/1.1
 Content-Type: application/json
 
 ###
@@ -19,15 +23,15 @@ Content-Type: application/json
 
 ###
 // Insert 1 
-POST http://localhost:3333/cursoextensao HTTP/1.1
+POST http://localhost:3333/curso HTTP/1.1
 Content-Type: application/json
 
 {
-  "nome_curso": "ADS",
-  "descricao_curso": "Profissionalizante",
-  "duracao_curso": 450,
-  "situacao_curso": true,
-  "cod_mec": "324545"
+  "nomeCurso": "ADS",
+  "duracaoCurso": 450,
+  "descricaoCurso": "Profissionalizante",
+  "situacaoCurso": true,
+  "codMec": "324545"
 }
 ###
 
@@ -51,7 +55,7 @@ POST http://localhost:3333/empregoPublico HTTP/1.1
 Content-Type: application/json
 
 {
-  "cargo_publico": "Deputado",
+  "cargoPublico": "Deputado",
   "situacao": true
 }
 
@@ -61,7 +65,7 @@ POST http://localhost:3333/regime HTTP/1.1
 Content-Type: application/json
 
 {
-  "tipo_regime": "Temporario"
+  "tipoRegime": "Temporario"
 }
 
 ###
@@ -70,7 +74,7 @@ POST http://localhost:3333/tipocontrato HTTP/1.1
 Content-Type: application/json
 
 {
-  "tipo_contrato": "temporario"
+  "tipoContrato": "temporario"
 }
 
 ###
@@ -80,21 +84,23 @@ POST http://localhost:3333/cursoextensao HTTP/1.1
 Content-Type: application/json
 
 {
-  "nome_extensao": "Arduino",
-  "tipo_extensao": "Extra-curricular",
+  "nomeExtensao": "Arduino",
+  "tipoExtensao": "Extra-curricular",
   "status": false
 }
 
 
 ###
-PUT  http://localhost:3333/cursos/4 HTTP/1.1
+PUT  http://localhost:3333/cursoextensao/1 HTTP/1.1
 Content-Type: application/json
 
 {
-  "nome_curso": "Python"
+  "nomeExtensao": "ADS",
+  "tipoExtensao": "Extra-curricular",
+  "status": true
 }
 
 ###
-DELETE  http://localhost:3333/cursos/4 HTTP/1.1
+DELETE  http://localhost:3333/cursoextensao/1 HTTP/1.1
 Content-Type: application/json
 

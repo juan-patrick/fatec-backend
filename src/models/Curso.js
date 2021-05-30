@@ -9,7 +9,7 @@ class Curso extends Model {
           allowNull: false,
         },
         duracaoCurso: {
-          type: DataTypes.INTEGER,
+          type: DataTypes.INTEGER(45),
           allowNull: false,
         },
         descricaoCurso: {

@@ -11,7 +11,7 @@ class Projeto extends Model {
         type: DataTypes.STRING(255),
         allowNull: false,
       },
-      dataInicial: {
+      dataInicio: {
         type: DataTypes.DATE,
         allowNull: false,
       },

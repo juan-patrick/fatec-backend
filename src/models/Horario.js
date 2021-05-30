@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class Horario extends Model {
   static init(sequelize) {
     super.init({
-      horario_inicio: {
+      horarioInicio: {
         type: DataTypes.DATE,
         allowNull: false,
       },
