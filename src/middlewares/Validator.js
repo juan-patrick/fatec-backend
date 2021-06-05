@@ -167,4 +167,31 @@ module.exports = {
     }
   
   },
+  async TurmaValidator(req, res, next) {
+    try {
+        const schema = Yup.object().shape({
+            nomeTurma: Yup.string().max(20).required(),
+        });
+        await schema.validate(req.body, { abortEarly: false });
+        return next();
+
+    } catch (error) {
+        return res.status(400).json({ message: 'Invalid data types to Turma' });
+    }
+
+}, 
+   async HorarioValidator(req, res, next) {
+    try {
+        const schema = Yup.object().shape({
+            HorarioInicial: Yup.string().required(),
+            HorarioFinal: Yup.string().required(),
+        });
+        await schema.validate(req.body, { abortEarly: false });
+        return next();
+
+    } catch (error) {
+        return res.status(400).json({ message: 'Invalid data types to Horario' });
+    }
+
+},
 }

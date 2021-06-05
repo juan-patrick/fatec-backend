@@ -43,7 +43,11 @@ Certificado.init(connection);
 Inatividade.init(connection);
 Professor.init(connection);
 Disciplina.init(connection);
-Projeto.init(connection)
+Projeto.init(connection);
+
+Turma.associate(connection.models);
+Horario.associate(connection.models);
+
 
 connection.sync({ alter: true });
 
