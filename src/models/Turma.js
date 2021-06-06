@@ -10,7 +10,9 @@ class Turma extends Model {
     }, { sequelize })
   }
 
-  static associate(models) { return models }
+  static associate(models) {
+    this.belongsToMany(models.Horario, { foreignKey: 'IdTurma', through: 'tb_grade_curricular', as: 'horario' });
+  }
 }
 
 module.exports = Turma;

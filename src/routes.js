@@ -7,6 +7,8 @@ const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
 const ProjetoController = require('./controllers/ProjetoController');
+const TurmaController = require('./controllers/TurmaController');
+const HorarioController = require('./controllers/HorarioController');
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
@@ -15,6 +17,8 @@ const {
   TipoContratoValidator,
   RegimeValidator,
   ProjetoValidator,
+  TurmaValidator,
+  HorarioValidator,
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
@@ -104,5 +108,17 @@ routes.get('/projeto/:projetoId', ProjetoController.show);
 routes.post('/projeto', ProjetoValidator, ProjetoController.store);
 routes.delete('/projeto/:projetoId', ProjetoController.delete);
 routes.put('/projeto/:projetoId', ProjetoValidator, ProjetoController.update);
+
+routes.get('/turma', TurmaController.index);
+routes.get('/turma/:turmaId', TurmaController.show);
+routes.post('/turma', TurmaValidator, TurmaController.store);
+routes.delete('/turma/:turmaId', TurmaController.delete);
+routes.put('/turma/:turmaId', TurmaValidator, TurmaController.update);
+
+routes.get('/horario', HorarioController.index);
+routes.get('/horario/:horarioId', HorarioController.show);
+routes.post('/horario', HorarioValidator, HorarioController.store);
+routes.delete('/horario/:horarioId', HorarioController.delete);
+routes.put('/horario/:horarioId', HorarioValidator, HorarioController.update);
 
 module.exports = routes;
