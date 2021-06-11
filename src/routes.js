@@ -3,12 +3,12 @@ const express = require('express');
 const CursoExtensaoController = require('./controllers/CursoExtensaoController');
 const DisciplinaController = require('./controllers/DisciplinaController');
 const EmpregoPublicoController = require('./controllers/EmpregoPublicoController');
+const HorarioController = require('./controllers/HorarioController');
+const ProjetoController = require('./controllers/ProjetoController');
 const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
-const ProjetoController = require('./controllers/ProjetoController');
 const TurmaController = require('./controllers/TurmaController');
-const HorarioController = require('./controllers/HorarioController');
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
