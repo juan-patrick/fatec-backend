@@ -192,6 +192,19 @@ module.exports = {
     } catch (error) {
         return res.status(400).json({ message: 'Invalid data types to Horario' });
     }
-
 },
+async StaffValidator(req, res, next) {
+  try {
+      const schema = Yup.object().shape({
+          nomeStaff: Yup.string().required(),
+        
+      });
+      await schema.validate(req.body, { abortEarly: false });
+      return next();
+
+  } catch (error) {
+      return res.status(400).json({ message: 'Invalid data types to Staff' });
+  }
+},
+  
 }

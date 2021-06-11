@@ -42,8 +42,8 @@ class Professor extends Model {
       },
     }, { sequelize })
   }
+  static associate(models) { this.hasMany(models.Staff, { foreignKey: 'Idprofessor' }) }
 
-  static associate(models) { return models }
 };
 
 module.exports = Professor;

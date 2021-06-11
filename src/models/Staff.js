@@ -10,7 +10,9 @@ class Staff extends Model {
     }, { sequelize })
   }
 
-  static associate(models) { return models }
+  static associate(models) {
+    this.belongsToMany(models.Eventos, { foreignKey: 'IdStaff', through: 'tb_eventos_has_tb_staff', as: 'eventos' });
+  }
 }
 
 module.exports = Staff;

@@ -9,6 +9,7 @@ const TitulacaoController = require('./controllers/TitulacaoController');
 const ProjetoController = require('./controllers/ProjetoController');
 const TurmaController = require('./controllers/TurmaController');
 const HorarioController = require('./controllers/HorarioController');
+const StaffController = require('./controllers/StaffController');
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
@@ -19,6 +20,7 @@ const {
   ProjetoValidator,
   TurmaValidator,
   HorarioValidator,
+  StaffValidator,
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
@@ -120,5 +122,11 @@ routes.get('/horario/:horarioId', HorarioController.show);
 routes.post('/horario', HorarioValidator, HorarioController.store);
 routes.delete('/horario/:horarioId', HorarioController.delete);
 routes.put('/horario/:horarioId', HorarioValidator, HorarioController.update);
+
+routes.get('/staff', StaffController.index);
+routes.get('/staff/:staffId', StaffController.show);
+routes.post('/staff', StaffValidator, StaffController.store);
+routes.delete('/staff/:staffId', StaffController.delete);
+routes.put('/staff/:staffId', StaffValidator, StaffController.update);
 
 module.exports = routes;
