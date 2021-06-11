@@ -9,6 +9,7 @@ const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
 const TurmaController = require('./controllers/TurmaController');
+
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,

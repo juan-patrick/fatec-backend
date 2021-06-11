@@ -1,7 +1,7 @@
 
 const { verify } = require('jsonwebtoken');
 
-export default (req, res, next) => {
+module.exports = (req, res, next) => {
   const { authentication } = req.headers;
 
   if (!authentication) {
@@ -23,6 +23,7 @@ export default (req, res, next) => {
       req.tokenId = decoded.id;
       req.tokenNome = decoded.nome;
       req.tokenEmail = decoded.email;
+      req.tokenPermissao = decoded.permissao;
 
       return next();
     });

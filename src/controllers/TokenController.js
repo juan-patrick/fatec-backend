@@ -10,4 +10,4 @@ const createToken = (params = {}) => {
   );
 };
 
-export default { createToken };
+module.exports = { createToken };

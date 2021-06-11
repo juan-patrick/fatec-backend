@@ -32,7 +32,7 @@ module.exports = {
 
     const usuario = await Usuario.findByPk(usuarioId);
 
-    usuario.update(req.body);
+    await usuario.update(req.body);
 
     return res.json(usuario);
   },

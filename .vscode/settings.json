@@ -9,6 +9,7 @@
     "empregopublico",
     "extensao",
     "middlewares",
+    "permissao",
     "tipocontrato",
     "usuario"
   ]

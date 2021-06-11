@@ -16,6 +16,14 @@ class Usuario extends Model {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
+      permissao: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
+      },
+      ultimoLogin: {
+        type: DataTypes.DATE,
+      },
       token: {
         type: DataTypes.STRING(400),
         defaultValue: '',
