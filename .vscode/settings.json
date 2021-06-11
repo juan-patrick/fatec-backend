@@ -6,6 +6,10 @@
     "Substituicao",
     "Titulacao",
     "cursoextensao",
-    "extensao"
+    "empregopublico",
+    "extensao",
+    "middlewares",
+    "tipocontrato",
+    "usuario"
   ]
 }
