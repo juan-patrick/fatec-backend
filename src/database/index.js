@@ -13,6 +13,7 @@ const Endereco = require('../models/Endereco');
 const Horario = require('../models/Horario');
 const Inatividade = require('../models/Inatividade');
 const Professor = require('../models/Professor');
+const Projeto = require('../models/Projeto');
 const Regime = require('../models/Regime');
 const RegistroSubstituicao = require('../models/RegistroSubstituicao');
 const Staff = require('../models/Staff');
@@ -20,7 +21,6 @@ const TipoContrato = require('../models/TipoContrato');
 const Titulacao = require('../models/Titulacao');
 const Turma = require('../models/Turma');
 const Vinculo = require('../models/Vinculo');
-const Projeto = require('../models/Projeto');
 
 const connection = new Sequelize(dbConfig);
 

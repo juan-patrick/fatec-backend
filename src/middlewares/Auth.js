@@ -1,7 +1,7 @@
-// eslint-disable-next-line import/no-unresolved
-import { verify } from 'jsonwebtoken';
 
-export default (req, res, next) => {
+const { verify } = require('jsonwebtoken');
+
+module.exports.Auth = async (req, res, next) => {
   const { authentication } = req.headers;
 
   if (!authentication) {
@@ -23,6 +23,7 @@ export default (req, res, next) => {
       req.tokenId = decoded.id;
       req.tokenNome = decoded.nome;
       req.tokenEmail = decoded.email;
+      req.tokenPerm = decoded.permissao;
 
       return next();
     });
