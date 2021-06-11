@@ -9,6 +9,7 @@ const TitulacaoController = require('./controllers/TitulacaoController');
 const ProjetoController = require('./controllers/ProjetoController');
 const TurmaController = require('./controllers/TurmaController');
 const HorarioController = require('./controllers/HorarioController');
+const CertifiadoController = require('./controllers/CertificadoController');
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
@@ -19,6 +20,7 @@ const {
   ProjetoValidator,
   TurmaValidator,
   HorarioValidator,
+  CertificadoValidator,
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
@@ -120,5 +122,11 @@ routes.get('/horario/:horarioId', HorarioController.show);
 routes.post('/horario', HorarioValidator, HorarioController.store);
 routes.delete('/horario/:horarioId', HorarioController.delete);
 routes.put('/horario/:horarioId', HorarioValidator, HorarioController.update);
+
+routes.get('/certificado', CertifiadoController.index);
+routes.get('/certificado/:certificadoId', CertifiadoController.show);
+routes.post('/certificado', CertificadoValidator, CertifiadoController.store);
+routes.delete('/certificado/:certificadoId', CertifiadoController.delete);
+routes.put('/certificado/:certificadoId', CertificadoValidator, CertifiadoController.update);
 
 module.exports = routes;

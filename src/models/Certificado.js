@@ -12,7 +12,7 @@ class Certificado extends Model {
         allowNull: false,
       },
       dataPalestra: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
       }
     }, { sequelize })

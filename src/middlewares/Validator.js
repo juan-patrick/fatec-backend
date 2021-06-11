@@ -194,4 +194,19 @@ module.exports = {
     }
 
 },
+async CertificadoValidator(req, res, next) {
+  try {
+      const schema = Yup.object().shape({
+          nomeAlunoCert: Yup.string().max(255).required(),
+          nomePalestrante: Yup.string().max(255).required(),
+          dataPalestra: Yup.date().required(),
+      });
+      await schema.validate(req.body, { abortEarly: false });
+      return next();
+
+  } catch (error) {
+      return res.status(400).json({ message: 'Invalid data types to Certificado' });
+  }
+
+},
 }
