@@ -9,6 +9,9 @@ const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
 const TurmaController = require('./controllers/TurmaController');
+const LoginController = require('./controllers/LoginController');
+
+const { Auth } = require('./middlewares/Auth');
 
 const {
   CursoExtensaoValidator,
@@ -23,6 +26,20 @@ const {
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
+
+
+
+routes.post('/login/signIn', LoginController.store);
+
+routes.use(Auth);
+
+
+routes.delete('/logout', LoginController.delete);
+
+routes.get('/sessions/check', async (req, res) => {
+  const { tokenPerm } = req;
+  return res.status(200).json({ auth: true, perm: tokenPerm });
+});
 
 routes.get('/cursoextensao', CursoExtensaoController.index);
 routes.get('/cursoextensao/:cursoExtensaoId', CursoExtensaoController.show);

@@ -46,11 +46,19 @@ module.exports = {
 
     signIn.token = token;
 
+    const {
+      id,
+      nomeUsuario: nome,
+      permissao,
+      emailUsuario: email,
+      token: updatedToken
+    } = signIn;
+
     return res.status(200).json({
-      signIn
+      id, nome, permissao, email, updatedToken
     });
   },
-  async update(req, res) {
+  async delete(req, res) {
     const { tokenId } = req;
 
     const usuario = await Usuario.findByIdAndUpdate(tokenId, { token: '' });

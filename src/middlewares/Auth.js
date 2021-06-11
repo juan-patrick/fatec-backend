@@ -1,7 +1,7 @@
 
 const { verify } = require('jsonwebtoken');
 
-module.exports = (req, res, next) => {
+module.exports.Auth = async (req, res, next) => {
   const { authentication } = req.headers;
 
   if (!authentication) {
