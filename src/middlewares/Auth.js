@@ -23,7 +23,7 @@ module.exports = (req, res, next) => {
       req.tokenId = decoded.id;
       req.tokenNome = decoded.nome;
       req.tokenEmail = decoded.email;
-      req.tokenPermissao = decoded.permissao;
+      req.tokenPerm = decoded.permissao;
 
       return next();
     });
