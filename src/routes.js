@@ -3,12 +3,16 @@ const express = require('express');
 const CursoExtensaoController = require('./controllers/CursoExtensaoController');
 const DisciplinaController = require('./controllers/DisciplinaController');
 const EmpregoPublicoController = require('./controllers/EmpregoPublicoController');
+const HorarioController = require('./controllers/HorarioController');
+const ProjetoController = require('./controllers/ProjetoController');
 const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
-const ProjetoController = require('./controllers/ProjetoController');
 const TurmaController = require('./controllers/TurmaController');
-const HorarioController = require('./controllers/HorarioController');
+const LoginController = require('./controllers/LoginController');
+
+const { Auth } = require('./middlewares/Auth');
+
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
@@ -22,6 +26,20 @@ const {
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
+
+
+
+routes.post('/login/signIn', LoginController.store);
+
+routes.use(Auth);
+
+
+routes.delete('/logout', LoginController.delete);
+
+routes.get('/sessions/check', async (req, res) => {
+  const { tokenPerm } = req;
+  return res.status(200).json({ auth: true, perm: tokenPerm });
+});
 
 routes.get('/cursoextensao', CursoExtensaoController.index);
 routes.get('/cursoextensao/:cursoExtensaoId', CursoExtensaoController.show);
