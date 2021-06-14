@@ -13,7 +13,7 @@ class Usuario extends Model {
         allowNull: false,
       },
       emailUsuario: {
-        type: DataTypes.STRING(45),
+        type: DataTypes.STRING(255),
         allowNull: false,
       },
       permissao: {
@@ -23,13 +23,15 @@ class Usuario extends Model {
       },
       ultimoLogin: {
         type: DataTypes.DATE,
+        allowNull: true,
       },
       token: {
-        type: DataTypes.STRING(400),
+        type: DataTypes.STRING,
         defaultValue: '',
       },
     },
       {
+        sequelize,
         hooks: {
           beforeCreate: (usuario, options) => {
             usuario.senhaUsuario = hashSync(usuario.senhaUsuario, 1);
@@ -47,7 +49,7 @@ class Usuario extends Model {
           },
         },
       },
-      { sequelize })
+    )
   }
 
   static associate(models) { return models }
