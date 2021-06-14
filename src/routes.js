@@ -9,7 +9,6 @@ const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
 const TurmaController = require('./controllers/TurmaController');
-const HorarioController = require('./controllers/HorarioController');
 const PeriodoController = require('./controllers/PeriodoController');
 const SemanaController = require('./controllers/SemanaController');
 
