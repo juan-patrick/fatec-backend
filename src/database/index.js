@@ -21,6 +21,9 @@ const TipoContrato = require('../models/TipoContrato');
 const Titulacao = require('../models/Titulacao');
 const Turma = require('../models/Turma');
 const Vinculo = require('../models/Vinculo');
+const Projeto = require('../models/Projeto');
+const Periodo = require('../models/Periodo');
+const Semana = require('../models/Semana');
 
 const connection = new Sequelize(dbConfig);
 
@@ -44,6 +47,8 @@ Inatividade.init(connection);
 Professor.init(connection);
 Disciplina.init(connection);
 Projeto.init(connection);
+Periodo.init(connection);
+Semana.init(connection);
 
 Turma.associate(connection.models);
 Horario.associate(connection.models);

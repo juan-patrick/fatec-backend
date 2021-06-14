@@ -98,3 +98,16 @@ Content-Type: application/json
 DELETE  http://localhost:3333/cursos/4 HTTP/1.1
 Content-Type: application/json
 
+###
+// Insert 1 
+POST http://localhost:3333/semana HTTP/1.1
+Content-Type: application/json
+
+{
+  "nome_semana": "ADS 1"
+}
+
+###
+// delete 1 
+DELETE  http://localhost:3333/semana/1 HTTP/1.1
+Content-Type: application/json

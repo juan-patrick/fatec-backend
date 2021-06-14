@@ -9,13 +9,17 @@ module.exports = {
         status: Yup.bool(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to CursoExtensao' });
+        .json({
+          message: 'Invalid data types to CursoExtensao'
+        });
     }
   },
   async DisciplinaValidator(req, res, next) {
@@ -31,13 +35,17 @@ module.exports = {
         codSigaDisciplina: Yup.string().required(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Disciplina' });
+        .json({
+          message: 'Invalid data types to Disciplina'
+        });
     }
   },
   async EmpregoPublicoValidator(req, res, next) {
@@ -47,13 +55,17 @@ module.exports = {
         situacao: Yup.bool(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Emprego Publico'});
+        .json({
+          message: 'Invalid data types to Emprego Publico'
+        });
     }
   },
   async TitulacaoValidator(req, res, next) {
@@ -62,13 +74,17 @@ module.exports = {
         nomeTitulacao: Yup.string(45).required(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Titulacao'});
+        .json({
+          message: 'Invalid data types to Titulacao'
+        });
     }
   },
   async TipoContratoValidator(req, res, next) {
@@ -77,13 +93,17 @@ module.exports = {
         tipoContrato: Yup.string(45).required(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Tipo de Contrato'});
+        .json({
+          message: 'Invalid data types to Tipo de Contrato'
+        });
     }
   },
   async RegimeValidator(req, res, next) {
@@ -92,13 +112,17 @@ module.exports = {
         tipoRegime: Yup.string(45).required(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Tipo de Regime'});
+        .json({
+          message: 'Invalid data types to Tipo de Regime'
+        });
     }
   },
   async RegistroSituacaoValidator(req, res, next) {
@@ -109,13 +133,17 @@ module.exports = {
         motivo: Yup.string().required()
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Registro Situacao' });
+        .json({
+          message: 'Invalid data types to Registro Situacao'
+        });
     }
   },
   async ComissaoValidator(req, res, next) {
@@ -125,13 +153,17 @@ module.exports = {
         descricao: Yup.string(45).required(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Comissao' });
+        .json({
+          message: 'Invalid data types to Comissao'
+        });
     }
   },
   async AreaPesquisaValidator(req, res, next) {
@@ -140,13 +172,17 @@ module.exports = {
         nomePesquisa: Yup.string(45).required(),
       });
 
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
 
       return next();
     } catch (error) {
       return res
         .status(400)
-        .json({ message: 'Invalid data types to Area de Pesquisa'});  
+        .json({
+          message: 'Invalid data types to Area de Pesquisa'
+        });
     }
   },
   async ProjetoValidator(req, res, next) {
@@ -159,39 +195,82 @@ module.exports = {
         situacaoProjetos: Yup.bool().required(),
         nomeProjetos: Yup.string().max(255).required(),
       });
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
       return next();
-  
+
     } catch (error) {
-      return res.status(400).json({ message: 'Invalid data types to Projetos' });
+      return res.status(400).json({
+        message: 'Invalid data types to Projetos'
+      });
     }
-  
+
   },
   async TurmaValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
         nomeTurma: Yup.string().max(20).required(),
       });
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
       return next();
 
     } catch (error) {
-      return res.status(400).json({ message: 'Invalid data types to Turma' });
+      return res.status(400).json({
+        message: 'Invalid data types to Turma'
+      });
     }
 
-  }, 
+  },
   async HorarioValidator(req, res, next) {
     try {
       const schema = Yup.object().shape({
         HorarioInicial: Yup.string().required(),
         HorarioFinal: Yup.string().required(),
       });
-      await schema.validate(req.body, { abortEarly: false });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
       return next();
 
     } catch (error) {
-      return res.status(400).json({ message: 'Invalid data types to Horario' });
+      return res.status(400).json({
+        message: 'Invalid data types to Horario'
+      });
     }
-
   },
+  async PeriodoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nome_periodo: Yup.string().required(),
+      });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
+      return next();
+
+    } catch (error) {
+      return res.status(400).json({
+        message: 'Invalid data types to Periodo'
+      });
+    }
+  },
+  async SemanaValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nome_semana: Yup.string().required(),
+      });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
+      return next();
+
+    } catch (error) {
+      return res.status(400).json({
+        message: 'Invalid data types to Semana'
+      });
+    }
+  }  
 }

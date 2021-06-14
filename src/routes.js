@@ -9,9 +9,9 @@ const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
 const TurmaController = require('./controllers/TurmaController');
-const LoginController = require('./controllers/LoginController');
-
-const { Auth } = require('./middlewares/Auth');
+const HorarioController = require('./controllers/HorarioController');
+const PeriodoController = require('./controllers/PeriodoController');
+const SemanaController = require('./controllers/SemanaController');
 
 const {
   CursoExtensaoValidator,
@@ -23,6 +23,8 @@ const {
   ProjetoValidator,
   TurmaValidator,
   HorarioValidator,
+  PeriodoValidator,
+  SemanaValidator
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
@@ -138,5 +140,17 @@ routes.get('/horario/:horarioId', HorarioController.show);
 routes.post('/horario', HorarioValidator, HorarioController.store);
 routes.delete('/horario/:horarioId', HorarioController.delete);
 routes.put('/horario/:horarioId', HorarioValidator, HorarioController.update);
+
+routes.get('/periodo', PeriodoController.index);
+routes.get('/periodo/:periodoId', PeriodoController.show);
+routes.post('/periodo', PeriodoValidator, PeriodoController.store);
+routes.delete('/periodo/:periodoId', PeriodoController.delete);
+routes.put('/periodo/:periodoId', PeriodoValidator, PeriodoController.update);
+
+routes.get('/semana', SemanaController.index);
+routes.get('/semana/:semanaId', SemanaController.show);
+routes.post('/semana', SemanaValidator, SemanaController.store);
+routes.delete('/semana/:semanaId', SemanaController.delete);
+routes.put('/semana/:semanaId', SemanaValidator, SemanaController.update);
 
 module.exports = routes;
