@@ -18,7 +18,9 @@ class Inatividade extends Model {
     }, { sequelize })
   }
 
-  static associate(models) { return models }
+  static associate(models) {
+    this.hasMany(models.Professor, { foreignKey: 'idProfessor', as: 'professor' });
+  }
 };
 
 module.exports = Inatividade;

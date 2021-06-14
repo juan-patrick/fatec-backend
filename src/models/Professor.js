@@ -43,7 +43,15 @@ class Professor extends Model {
     }, { sequelize })
   }
 
-  static associate(models) { return models }
+  static associate(models) {
+    this.hasMany(models.Endereco, { foreignKey: 'idEndereco', as: 'endereco' });
+    this.hasMany(models.Projeto, { foreignKey: 'idProjeto', as: 'projeto' });
+    this.hasMany(models.Vinculo, { foreignKey: 'idVinculo', as: 'vinculo' });
+    this.hasMany(models.Regime, { foreignKey: 'idRegime', as: 'regime' });
+    this.hasMany(models.EmpregoPublico, { foreignKey: 'idEmpregoPublico', as: 'emprego publico' });
+    this.hasMany(models.TipoContrato, { foreignKey: 'idTipoContrato', as: 'tipo contrato' });
+    this.hasMany(models.Titulacao, { foreignKey: 'idTitulacao', as: 'titulacao' });
+  }
 };
 
 module.exports = Professor;

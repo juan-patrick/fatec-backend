@@ -13,6 +13,7 @@ const Endereco = require('../models/Endereco');
 const Horario = require('../models/Horario');
 const Inatividade = require('../models/Inatividade');
 const Professor = require('../models/Professor');
+const Projeto = require('../models/Projeto');
 const Regime = require('../models/Regime');
 const RegistroSubstituicao = require('../models/RegistroSubstituicao');
 const Staff = require('../models/Staff');
