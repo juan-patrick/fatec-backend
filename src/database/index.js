@@ -6,6 +6,7 @@ const AreaPesquisa = require('../models/AreaPesquisa');
 const Certificado = require('../models/Certificado');
 const Comissao = require('../models/Comissao');
 const Curso = require('../models/Curso');
+const Matriz = require('../models/Matriz');
 const CursoExtensao = require('../models/CursoExtensao');
 const Disciplina = require('../models/Disciplina');
 const EmpregoPublico = require('../models/EmpregoPublico');
@@ -27,6 +28,7 @@ const connection = new Sequelize(dbConfig);
 CursoExtensao.init(connection);
 Curso.init(connection);
 Aluno.init(connection);
+Matriz.init(connection);
 AreaPesquisa.init(connection);
 Comissao.init(connection);
 EmpregoPublico.init(connection);
@@ -47,7 +49,7 @@ Projeto.init(connection);
 
 Turma.associate(connection.models);
 Horario.associate(connection.models);
-
+Matriz.associate(connection.models);
 
 connection.sync({ alter: true });
 

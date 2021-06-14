@@ -18,7 +18,6 @@ class CursoExtensao extends Model {
       }
     }, { sequelize })
   }
-  //static associate(models) { this.hasMany(Projeto, { foreignKey: 'tb_curso_extensao_idcurso_extensao' }) }
 
 }
 

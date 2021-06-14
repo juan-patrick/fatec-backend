@@ -9,6 +9,8 @@ const TitulacaoController = require('./controllers/TitulacaoController');
 const ProjetoController = require('./controllers/ProjetoController');
 const TurmaController = require('./controllers/TurmaController');
 const HorarioController = require('./controllers/HorarioController');
+const MatrizController = require('./controllers/MatrizController');
+
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
@@ -18,6 +20,7 @@ const {
   RegimeValidator,
   ProjetoValidator,
   TurmaValidator,
+  MatrizValidator,
   HorarioValidator,
 } = require('./middlewares/Validator');
 
@@ -120,5 +123,11 @@ routes.get('/horario/:horarioId', HorarioController.show);
 routes.post('/horario', HorarioValidator, HorarioController.store);
 routes.delete('/horario/:horarioId', HorarioController.delete);
 routes.put('/horario/:horarioId', HorarioValidator, HorarioController.update);
+
+routes.get('/matriz', MatrizController.index);
+routes.get('/matriz/:matrizId', MatrizController.show);
+routes.post('/matriz', MatrizValidator, MatrizController.store);
+routes.delete('/matriz/:matrizId', MatrizController.delete);
+routes.put('/matriz/:matrizId', MatrizValidator, MatrizController.update);
 
 module.exports = routes;

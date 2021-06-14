@@ -1,6 +1,29 @@
 ###
-GET http://localhost:3333/cursos HTTP/1.1
+GET http://localhost:3333/matriz HTTP/1.1
 Content-Type: application/json
+###
+
+POST http://localhost:3333/matriz HTTP/1.1
+Content-Type: application/json
+
+{
+  "descricaoMatriz": "sssss",
+  "anoMatriz": "aaasssssa",
+  "statusMatriz": true,
+  "duracaoHoraAula": "assssaaa",
+  "periodoLetivo": "aaasssa",
+  "turnoFuncionamento": "aaassa",
+  "prazoIntegralizacaoMin": "aassaa",
+  "prazoIntegralizacaoMax": "aaassa",
+  "regimeMatricula": "aaassa",
+  "competenciaEspecificas": "assaaa",
+  "competenciasGerais": "aasssaa",
+  "competencia": "aaasssa",
+  "formaAcesso": "aaasssa",
+  "eixoTecnologico": "aaasssa",
+  "perfilProfissional": "aasssaa",
+  "areasAtuacao": "ssss"
+}
 
 ###
 GET http://localhost:3333/disciplina HTTP/1.1
@@ -18,7 +41,7 @@ GET http://localhost:3333/regime HTTP/1.1
 Content-Type: application/json
 
 ###
-// Insert 1 
+// Insert 1
 POST http://localhost:3333/cursoextensao HTTP/1.1
 Content-Type: application/json
 
