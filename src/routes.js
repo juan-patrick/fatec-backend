@@ -9,6 +9,8 @@ const TitulacaoController = require('./controllers/TitulacaoController');
 const ProjetoController = require('./controllers/ProjetoController');
 const TurmaController = require('./controllers/TurmaController');
 const HorarioController = require('./controllers/HorarioController');
+const AreaController = require('./controllers/AreaController');
+const EventosController = require('./controllers/EventosController')
 const {
   CursoExtensaoValidator,
   DisciplinaValidator,
@@ -19,6 +21,8 @@ const {
   ProjetoValidator,
   TurmaValidator,
   HorarioValidator,
+  AreaValidator,
+  EventosValidator,
 } = require('./middlewares/Validator');
 
 const routes = express.Router();
@@ -120,5 +124,17 @@ routes.get('/horario/:horarioId', HorarioController.show);
 routes.post('/horario', HorarioValidator, HorarioController.store);
 routes.delete('/horario/:horarioId', HorarioController.delete);
 routes.put('/horario/:horarioId', HorarioValidator, HorarioController.update);
+
+routes.get('/area', AreaController.index);
+routes.get('/area/:areaId', AreaController.show);
+routes.post('/area', AreaValidator, AreaController.store);
+routes.delete('/area/:areaId', AreaController.delete);
+routes.put('/area/:areaId', AreaValidator, AreaController.update);
+
+routes.get('/eventos', EventosController.index);
+routes.get('/eventos/:eventosId', EventosController.show);
+routes.post('/eventos', EventosValidator, EventosController.store);
+routes.delete('/eventos/:eventosId', EventosController.delete);
+routes.put('/eventos/:eventosId', EventosValidator, EventosController.update);
 
 module.exports = routes;
