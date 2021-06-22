@@ -48,7 +48,6 @@ Disciplina.init(connection);
 Projeto.init(connection);
 Periodo.init(connection);
 Semana.init(connection);
-
 Turma.associate(connection.models);
 Horario.associate(connection.models);
 

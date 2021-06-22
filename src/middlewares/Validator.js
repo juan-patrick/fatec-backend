@@ -272,5 +272,25 @@ module.exports = {
         message: 'Invalid data types to Semana'
       });
     }
+  },
+    async CursoValidator(req, res, next) {
+      try {
+        const schema = Yup.object().shape({
+          nomeCurso: Yup.string(255).required(),
+          duracaoCurso: Yup.number().required(),
+          descricaoCurso: Yup.string().required(),
+          situacaoCurso: Yup.bool().required(),
+          codMec: Yup.string().required(),
+        });
+        await schema.validate(req.body, {
+          abortEarly: false
+        });
+        return next();
+  
+      } catch (error) {
+        return res.status(400).json({
+          message: 'Invalid data types to Curso'
+        });
+      }
   }  
 }

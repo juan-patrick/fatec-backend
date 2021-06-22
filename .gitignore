@@ -7,3 +7,5 @@ package-lock.json.bak
 yarn-error.log
 
 .env
+
+example.http

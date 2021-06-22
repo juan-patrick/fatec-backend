@@ -11,8 +11,11 @@ const TitulacaoController = require('./controllers/TitulacaoController');
 const TurmaController = require('./controllers/TurmaController');
 const PeriodoController = require('./controllers/PeriodoController');
 const SemanaController = require('./controllers/SemanaController');
+const CursoController = require('./controllers/CursoController');
+
 
 const {
+  CursoValidator,
   CursoExtensaoValidator,
   DisciplinaValidator,
   EmpregoPublicoValidator,
@@ -25,6 +28,7 @@ const {
   PeriodoValidator,
   SemanaValidator
 } = require('./middlewares/Validator');
+const LoginController = require('./controllers/LoginController');
 
 const routes = express.Router();
 
@@ -32,7 +36,7 @@ const routes = express.Router();
 
 routes.post('/login/signIn', LoginController.store);
 
-routes.use(Auth);
+//routes.use(Auth);
 
 
 routes.delete('/logout', LoginController.delete);
@@ -151,5 +155,11 @@ routes.get('/semana/:semanaId', SemanaController.show);
 routes.post('/semana', SemanaValidator, SemanaController.store);
 routes.delete('/semana/:semanaId', SemanaController.delete);
 routes.put('/semana/:semanaId', SemanaValidator, SemanaController.update);
+
+routes.get('/curso', CursoController.index);
+routes.get('/curso/:cursoId', CursoController.show);
+routes.post('/curso', CursoValidator, CursoController.store);
+routes.delete('/curso/:cursoId', CursoController.delete);
+routes.put('/curso/:cursoId', CursoValidator, CursoController.update);
 
 module.exports = routes;
