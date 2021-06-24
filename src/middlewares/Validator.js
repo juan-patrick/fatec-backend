@@ -273,24 +273,81 @@ module.exports = {
       });
     }
   },
-    async CursoValidator(req, res, next) {
-      try {
-        const schema = Yup.object().shape({
-          nomeCurso: Yup.string(255).required(),
-          duracaoCurso: Yup.number().required(),
-          descricaoCurso: Yup.string().required(),
-          situacaoCurso: Yup.bool().required(),
-          codMec: Yup.string().required(),
-        });
-        await schema.validate(req.body, {
-          abortEarly: false
-        });
-        return next();
+  async CursoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nomeCurso: Yup.string(255).required(),
+        duracaoCurso: Yup.number().required(),
+        descricaoCurso: Yup.string().required(),
+        situacaoCurso: Yup.bool().required(),
+        codMec: Yup.string().required(),
+      });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
+      return next();
   
-      } catch (error) {
-        return res.status(400).json({
-          message: 'Invalid data types to Curso'
-        });
-      }
-  }  
+    } catch (error) {
+      return res.status(400).json({
+        message: 'Invalid data types to Curso'
+      });
+    }
+  },
+  async ProfessorValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        nomeProfessor: Yup.string(100).required(),
+        cpfProfessor: Yup.number().required(),
+        rgProfessor: Yup.number().required(),
+        enderecoProfessor: Yup.string(100).required(),
+        cepProfessor: Yup.number().required(),
+        telefoneProfessor: Yup.number().required(),
+        emailProfessor: Yup.string(100).required(),
+        dataNascProfessor: Yup.date().required(),
+      });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
+      return next();
+  
+    } catch (error) {
+      return res.status(400).json({
+        message: 'Invalid data types to Professor'
+      });
+    }
+  },
+  async InatividadeValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        motivo: Yup.string(100).required(),
+        dataInicio: Yup.date().required(),
+        dataFim: Yup.date().required(),
+      });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
+      return next();
+  
+    } catch (error) {
+      return res.status(400).json({
+        message: 'Invalid data types to Inatividade'
+      });
+    }
+  },
+  async VinculoValidator(req, res, next) {
+    try {
+      const schema = Yup.object().shape({
+        tipoVinculo: Yup.string(45).required(),
+      });
+      await schema.validate(req.body, {
+        abortEarly: false
+      });
+      return next();
+  
+    } catch (error) {
+      return res.status(400).json({
+        message: 'Invalid data types to Vinculo'
+      });
+    }
+  }   
 }

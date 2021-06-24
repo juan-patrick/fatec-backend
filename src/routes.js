@@ -12,6 +12,9 @@ const TurmaController = require('./controllers/TurmaController');
 const PeriodoController = require('./controllers/PeriodoController');
 const SemanaController = require('./controllers/SemanaController');
 const CursoController = require('./controllers/CursoController');
+const ProfessorController = require('./controllers/ProfessorController');
+const InatividadeController = require('./controllers/InatividadeController');
+const VinculoController = require('./controllers/VinculoController');
 
 
 const {
@@ -26,7 +29,10 @@ const {
   TurmaValidator,
   HorarioValidator,
   PeriodoValidator,
-  SemanaValidator
+  SemanaValidator,
+  ProfessorValidator,
+  InatividadeValidator,
+  VinculoValidator
 } = require('./middlewares/Validator');
 const LoginController = require('./controllers/LoginController');
 
@@ -161,5 +167,23 @@ routes.get('/curso/:cursoId', CursoController.show);
 routes.post('/curso', CursoValidator, CursoController.store);
 routes.delete('/curso/:cursoId', CursoController.delete);
 routes.put('/curso/:cursoId', CursoValidator, CursoController.update);
+
+routes.get('/professor', ProfessorController.index);
+routes.get('/professor/:professorId', ProfessorController.show);
+routes.post('/professor', ProfessorValidator, ProfessorController.store);
+routes.delete('/professor/:professorId', ProfessorController.delete);
+routes.put('/professor/:professorId', ProfessorValidator, ProfessorController.update);
+
+routes.get('/inatividade', InatividadeController.index);
+routes.get('/inatividade/:inatividadeId', InatividadeController.show);
+routes.post('/inatividade', InatividadeValidator, InatividadeController.store);
+routes.delete('/inatividade/:inatividadeId', InatividadeController.delete);
+routes.put('/inatividade/:inatividadeId', InatividadeValidator, InatividadeController.update);
+
+routes.get('/vinculo', VinculoController.index);
+routes.get('/vinculo/:vinculoId', VinculoController.show);
+routes.post('/vinculo', VinculoValidator, VinculoController.store);
+routes.delete('/vinculo/:vinculoId', VinculoController.delete);
+routes.put('/vinculo/:vinculoId', VinculoValidator, VinculoController.update);
 
 module.exports = routes;
