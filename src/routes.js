@@ -9,6 +9,8 @@ const RegimeController = require('./controllers/RegimeController');
 const TipoContratoController = require('./controllers/TipoContratoController');
 const TitulacaoController = require('./controllers/TitulacaoController');
 const TurmaController = require('./controllers/TurmaController');
+const LoginController = require('./controllers/LoginController');
+const UsuarioController = require('./controllers/UsuarioController');
 const PeriodoController = require('./controllers/PeriodoController');
 const SemanaController = require('./controllers/SemanaController');
 const CursoController = require('./controllers/CursoController');
@@ -38,12 +40,15 @@ const LoginController = require('./controllers/LoginController');
 
 const routes = express.Router();
 
-
+routes.get('/usuario/', UsuarioController.index);
+routes.post('/usuario', UsuarioController.store);
+routes.get('/usuario/:usuarioId', UsuarioController.show);
+routes.put('/usuario/:usuarioId', UsuarioController.update);
+routes.delete('/usuario/:usuarioId', UsuarioController.delete);
 
 routes.post('/login/signIn', LoginController.store);
 
 //routes.use(Auth);
-
 
 routes.delete('/logout', LoginController.delete);
 

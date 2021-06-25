@@ -1,34 +1,29 @@
-
 const { verify } = require('jsonwebtoken');
+const { promisify } = require('util');
 
 module.exports.Auth = async (req, res, next) => {
-  const { authentication } = req.headers;
+  const { authorization } = req.headers;
 
-  if (!authentication) {
-    return res.status(401).json({ mensagem: 'Não autorizado' });
+  if (!authorization) {
+    return res.status(401).json({ error: 'Não autorizado.' });
   }
 
-  const [, token] = authentication.split(' ');
+  const [, token] = authorization.split(' ');
 
   try {
-    verify(token, process.env.SECRET_JWT, (err, decoded) => {
-      if (err) {
-        return res.status(401).json({ mensagem: 'Não autorizado' });
-      }
+    const decoded = await promisify(verify)(token, process.env.SECRET_JWT);
 
-      if (decoded.expiresIn < Date.now()) {
-        return res.status(401).json({ mensagem: 'Sessão inválida' });
-      }
+    if (decoded.expiresIn < Date.now()) {
+      return res.status(401).json({ error: 'Sessão inválida.' });
+    }
 
-      req.tokenId = decoded.id;
-      req.tokenNome = decoded.nome;
-      req.tokenEmail = decoded.email;
-      req.tokenPerm = decoded.permissao;
+    req.tokenId = decoded.id;
+    req.tokenNome = decoded.nome;
+    req.tokenEmail = decoded.email;
+    req.tokenPerm = decoded.permissao;
 
-      return next();
-    });
-    return res.status(401).json({ mensagem: 'Erro ao processar o token' });
+    return next();
   } catch (error) {
-    return res.status(401).json({ mensagem: 'Não autorizado' });
+    return res.status(401).json({ error: 'Não autorizado.' });
   }
 };

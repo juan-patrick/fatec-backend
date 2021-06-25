@@ -99,7 +99,17 @@ DELETE  http://localhost:3333/curso/4 HTTP/1.1
 Content-Type: application/json
 
 ###
-// Insert 1 
+POST http://localhost:3333/usuario HTTP/1.1
+Content-Type: application/json
+
+{
+  "nomeUsuario": "Juan Patrick",
+  "senhaUsuario": "123456",
+  "emailUsuario": "juan@email.com",
+  "permissao": 1
+}
+
+###
 POST http://localhost:3333/semana HTTP/1.1
 Content-Type: application/json
 
