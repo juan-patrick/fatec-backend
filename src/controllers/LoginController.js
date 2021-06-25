@@ -16,17 +16,12 @@ module.exports = {
   },
   async store(req, res) {
     const { emailUsuario, senhaUsuario } = req.body;
-
     const signIn = await Usuario.findOne({ where: { emailUsuario } }, '+senhaUsuario').catch((err) => {
       return res.status(400).json({ error: err });
     });
 
     if (!signIn) {
       return res.status(400).json({ error: 'Usuário inválido.' });
-    }
-
-    if (!signIn.status) {
-      return res.status(400).json({ error: 'Usuário inativo.' });
     }
 
     const checkPass = await bcryptjs.compare(senhaUsuario, signIn.senhaUsuario);

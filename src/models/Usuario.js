@@ -35,11 +35,7 @@ class Usuario extends Model {
         hooks: {
           beforeCreate: (usuario, options) => {
             usuario.senhaUsuario = hashSync(usuario.senhaUsuario, 1);
-          },
-          beforeUpdate: (usuario, options) => {
-            if (usuario.senhaUsuario)
-              usuario.senhaUsuario = pass = hashSync(senhaUsuario, 1);
-          },
+          },         
           beforeBulkCreate: (usuario, options) => {
             usuario.senhaUsuario = hashSync(usuario.senhaUsuario, 1);
           },
