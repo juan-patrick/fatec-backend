@@ -4,40 +4,36 @@ class Professor extends Model {
   static init(sequelize) {
     super.init({
       nomeProfessor: {
-        type: DataTypes.STRING(255),
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
-      idadeProfessor: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      dataNasc: {
-        type: DataTypes.DATE,
+      dataNascProfessor: {
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
       cpfProfessor: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.INTEGER,
         allowNull: false,
    
       },
-      rgProfessor: {
-        type: DataTypes.STRING(20),
+      enderecoProfessor: {
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
-      celularProfessor: {
-        type: DataTypes.STRING(20),
+      cepProfessor: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      rgProfessor: {
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       telefoneProfessor: {
-        type: DataTypes.STRING(20),
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       emailProfessor: {
-        type: DataTypes.STRING(45),
-        allowNull: false,
-      },
-      emailInstituProfessor: {
-        type: DataTypes.STRING(45),
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
     }, { sequelize })

@@ -4,15 +4,15 @@ class Inatividade extends Model {
   static init(sequelize) {
     super.init({
       dataInicio: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
       dataFim: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
       motivo: {
-        type: DataTypes.STRING(255),
+        type: DataTypes.STRING(100),
         allowNull: false,
       },
     }, { sequelize })

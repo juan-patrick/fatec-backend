@@ -11,10 +11,16 @@ const TitulacaoController = require('./controllers/TitulacaoController');
 const TurmaController = require('./controllers/TurmaController');
 const LoginController = require('./controllers/LoginController');
 const UsuarioController = require('./controllers/UsuarioController');
+const PeriodoController = require('./controllers/PeriodoController');
+const SemanaController = require('./controllers/SemanaController');
+const CursoController = require('./controllers/CursoController');
+const ProfessorController = require('./controllers/ProfessorController');
+const InatividadeController = require('./controllers/InatividadeController');
+const VinculoController = require('./controllers/VinculoController');
 
-const { Auth } = require('./middlewares/Auth');
 
 const {
+  CursoValidator,
   CursoExtensaoValidator,
   DisciplinaValidator,
   EmpregoPublicoValidator,
@@ -24,7 +30,13 @@ const {
   ProjetoValidator,
   TurmaValidator,
   HorarioValidator,
+  PeriodoValidator,
+  SemanaValidator,
+  ProfessorValidator,
+  InatividadeValidator,
+  VinculoValidator
 } = require('./middlewares/Validator');
+const LoginController = require('./controllers/LoginController');
 
 const routes = express.Router();
 
@@ -36,7 +48,7 @@ routes.delete('/usuario/:usuarioId', UsuarioController.delete);
 
 routes.post('/login/signIn', LoginController.store);
 
-routes.use(Auth);
+//routes.use(Auth);
 
 routes.delete('/logout', LoginController.delete);
 
@@ -142,5 +154,41 @@ routes.get('/horario/:horarioId', HorarioController.show);
 routes.post('/horario', HorarioValidator, HorarioController.store);
 routes.delete('/horario/:horarioId', HorarioController.delete);
 routes.put('/horario/:horarioId', HorarioValidator, HorarioController.update);
+
+routes.get('/periodo', PeriodoController.index);
+routes.get('/periodo/:periodoId', PeriodoController.show);
+routes.post('/periodo', PeriodoValidator, PeriodoController.store);
+routes.delete('/periodo/:periodoId', PeriodoController.delete);
+routes.put('/periodo/:periodoId', PeriodoValidator, PeriodoController.update);
+
+routes.get('/semana', SemanaController.index);
+routes.get('/semana/:semanaId', SemanaController.show);
+routes.post('/semana', SemanaValidator, SemanaController.store);
+routes.delete('/semana/:semanaId', SemanaController.delete);
+routes.put('/semana/:semanaId', SemanaValidator, SemanaController.update);
+
+routes.get('/curso', CursoController.index);
+routes.get('/curso/:cursoId', CursoController.show);
+routes.post('/curso', CursoValidator, CursoController.store);
+routes.delete('/curso/:cursoId', CursoController.delete);
+routes.put('/curso/:cursoId', CursoValidator, CursoController.update);
+
+routes.get('/professor', ProfessorController.index);
+routes.get('/professor/:professorId', ProfessorController.show);
+routes.post('/professor', ProfessorValidator, ProfessorController.store);
+routes.delete('/professor/:professorId', ProfessorController.delete);
+routes.put('/professor/:professorId', ProfessorValidator, ProfessorController.update);
+
+routes.get('/inatividade', InatividadeController.index);
+routes.get('/inatividade/:inatividadeId', InatividadeController.show);
+routes.post('/inatividade', InatividadeValidator, InatividadeController.store);
+routes.delete('/inatividade/:inatividadeId', InatividadeController.delete);
+routes.put('/inatividade/:inatividadeId', InatividadeValidator, InatividadeController.update);
+
+routes.get('/vinculo', VinculoController.index);
+routes.get('/vinculo/:vinculoId', VinculoController.show);
+routes.post('/vinculo', VinculoValidator, VinculoController.store);
+routes.delete('/vinculo/:vinculoId', VinculoController.delete);
+routes.put('/vinculo/:vinculoId', VinculoValidator, VinculoController.update);
 
 module.exports = routes;
