@@ -56,7 +56,7 @@ module.exports = {
   async delete(req, res) {
     const { tokenId } = req;
 
-    const usuario = await Usuario.findByIdAndUpdate(tokenId, { token: '' });
+    const usuario = await Usuario.findByPk(tokenId);
 
     await usuario.update({ token: '' });
 

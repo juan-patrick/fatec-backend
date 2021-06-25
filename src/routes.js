@@ -16,7 +16,7 @@ const CursoController = require('./controllers/CursoController');
 const ProfessorController = require('./controllers/ProfessorController');
 const InatividadeController = require('./controllers/InatividadeController');
 const VinculoController = require('./controllers/VinculoController');
-
+const { Auth } = require('./middlewares/Auth');
 
 const {
   CursoValidator,
@@ -47,7 +47,7 @@ routes.delete('/usuario/:usuarioId', UsuarioController.delete);
 
 routes.post('/login/signIn', LoginController.store);
 
-//routes.use(Auth);
+routes.use(Auth);
 
 routes.delete('/logout', LoginController.delete);
 
